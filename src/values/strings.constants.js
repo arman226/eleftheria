@@ -1,4 +1,4 @@
-export const PORTFOLIO_OWNER = "Armando I. Bibay Jr.";
+export const PORTFOLIO_OWNER = "ELEFTHERIA";
 export const DISPLAY_NAME = "Arman";
 export const INITIALS = "AB";
 export const BIRTHDAY = new Date("02/26/1998");

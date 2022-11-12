@@ -77,7 +77,6 @@ const NavMenu = () => {
                   }}
                 />
               ))}
-              <Item title="CV" component="CV" />
             </ul>
           </Collapse>
         </Container>
