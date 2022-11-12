@@ -72,22 +72,8 @@ const NavMenu = ({ isAuthenticated }) => {
                 ))
               ) : (
                 <>
-                  <Item
-                    title="Log In"
-                    component=""
-                    // onClickListener={() => {
-                    //   setSelectedPage(component);
-                    //   setIsOpen(false);
-                    // }}
-                  />
-                  <Item
-                    title="Sign Up"
-                    component=""
-                    // onClickListener={() => {
-                    //   setSelectedPage(component);
-                    //   setIsOpen(false);
-                    // }}
-                  />
+                  <Item title="Log In" component="" />
+                  <Item title="Sign Up" component="signup" />
                 </>
               )}
             </ul>
