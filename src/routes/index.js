@@ -3,16 +3,20 @@ import { Route, Routes } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "pages/Home";
 import NavMenu from "components/navMenu";
+import Layout from "components/Layout";
 
 const RootRoute = () => {
   return (
     <>
       <Router>
         <NavMenu />
-        <Routes>
-          <Route exact path="/" component={Home} />
-          <Route path="/home" component={Home} />
-        </Routes>
+
+        <Layout>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+          </Routes>
+        </Layout>
       </Router>
     </>
   );

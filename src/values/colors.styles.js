@@ -5,3 +5,4 @@ export const GRAY = "#5a5964";
 export const WHITE = "#ffff";
 export const BLACK = "#000000";
 export const NEON_BLUE = "#498fe9";
+export const PRIMARY_ORANGE = "#ffa870";
