@@ -73,7 +73,7 @@ const NavMenu = ({ isAuthenticated }) => {
               ) : (
                 <>
                   <Item
-                    title="Sign In"
+                    title="Log In"
                     component=""
                     // onClickListener={() => {
                     //   setSelectedPage(component);
