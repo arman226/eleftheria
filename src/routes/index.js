@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "pages/Home";
@@ -6,10 +6,11 @@ import NavMenu from "components/navMenu";
 import Layout from "components/Layout";
 
 const RootRoute = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <>
       <Router>
-        <NavMenu />
+        <NavMenu isAuthenticated={isAuthenticated} />
 
         <Layout>
           <Routes>

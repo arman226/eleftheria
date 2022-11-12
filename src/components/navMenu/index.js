@@ -20,20 +20,12 @@ const menu = [
   },
 
   {
-    title: "Work Experience",
-    component: "experience",
-  },
-  {
-    title: "Education",
-    component: "education",
-  },
-  {
-    title: "Skills",
-    component: "skills",
+    title: "Profile",
+    component: "profile",
   },
 ];
 
-const NavMenu = () => {
+const NavMenu = ({ isAuthenticated }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPage, setSelectedPage] = useState("Home");
 
@@ -67,16 +59,37 @@ const NavMenu = () => {
             navbar
           >
             <ul className="navbar-nav flex-grow">
-              {menu.map(({ title, component }, idx) => (
-                <Item
-                  title={title}
-                  component={component}
-                  onClickListener={() => {
-                    setSelectedPage(component);
-                    setIsOpen(false);
-                  }}
-                />
-              ))}
+              {isAuthenticated ? (
+                menu.map(({ title, component }, idx) => (
+                  <Item
+                    title={title}
+                    component={component}
+                    onClickListener={() => {
+                      setSelectedPage(component);
+                      setIsOpen(false);
+                    }}
+                  />
+                ))
+              ) : (
+                <>
+                  <Item
+                    title="Sign In"
+                    component=""
+                    // onClickListener={() => {
+                    //   setSelectedPage(component);
+                    //   setIsOpen(false);
+                    // }}
+                  />
+                  <Item
+                    title="Sign Up"
+                    component=""
+                    // onClickListener={() => {
+                    //   setSelectedPage(component);
+                    //   setIsOpen(false);
+                    // }}
+                  />
+                </>
+              )}
             </ul>
           </Collapse>
         </Container>
