@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import Home from "pages/Home";
 import NavMenu from "components/navMenu";
 import Layout from "components/Layout";
+import Signup from "pages/Sign-up";
+import Profile from "pages/Profile";
+import Dashboard from "pages/Dashboad";
 
 const RootRoute = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   return (
     <>
       <Router>
@@ -14,8 +17,20 @@ const RootRoute = () => {
 
         <Layout>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            {!isAuthenticated ? (
+              <>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/signup" element={<Signup />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="*" element={<Navigate to="/" />} />
+              </>
+            ) : (
+              <>
+                <Route exact path="/profile" element={<Profile />} />
+                <Route exact path="/dashboard" element={<Dashboard />} />
+                <Route path="*" element={<Navigate to="/dashboard" />} />
+              </>
+            )}
           </Routes>
         </Layout>
       </Router>
