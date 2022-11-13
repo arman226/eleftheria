@@ -66,10 +66,10 @@ const NavMenu = ({ isAuthenticated, setIsAuthenticated }) => {
                   <Item
                     title={title}
                     component={component}
-                    onClickListener={() => {
-                      setSelectedPage(component);
-                      setIsOpen(false);
-                    }}
+                    // onClickListener={() => {
+                    //   setSelectedPage(component);
+                    //   setIsOpen(false);
+                    // }}
                   />
                 ))
               ) : (
