@@ -27,7 +27,7 @@ const menu = [
   },
 ];
 
-const NavMenu = ({ isAuthenticated }) => {
+const NavMenu = ({ isAuthenticated, setIsAuthenticated }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedPage, setSelectedPage] = useState("Home");
 
@@ -81,7 +81,11 @@ const NavMenu = ({ isAuthenticated }) => {
                         const test = await window.ethereum.request({
                           method: "eth_requestAccounts",
                         });
-                        console.log(test);
+                        if (test.length === 0) {
+                          alert("no accounts found");
+                          return;
+                        }
+                        setIsAuthenticated(true);
                       } else {
                         alert("MetaMask Not Found");
                       }

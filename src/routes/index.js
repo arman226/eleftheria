@@ -13,7 +13,10 @@ const RootRoute = () => {
   return (
     <>
       <Router>
-        <NavMenu isAuthenticated={isAuthenticated} />
+        <NavMenu
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
+        />
 
         <Layout>
           <Routes>
