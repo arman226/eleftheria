@@ -29,7 +29,7 @@ const RootRoute = () => {
               </>
             ) : (
               <>
-                <Route exact path="/profile" element={<Profile />} />
+                <Route path="/profile" element={<Profile />} />
                 <Route exact path="/dashboard" element={<Dashboard />} />
                 <Route path="*" element={<Navigate to="/dashboard" />} />
               </>
