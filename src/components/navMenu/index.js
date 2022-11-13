@@ -6,6 +6,8 @@ import {
   NavbarToggler,
   Container,
 } from "reactstrap";
+import { ethers } from "ethers";
+import erc20abi from "./ERC20abi.json";
 import { makeStyles, AppBar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { PORTFOLIO_OWNER, PROFESSION } from "values/strings.constants";
@@ -72,7 +74,19 @@ const NavMenu = ({ isAuthenticated }) => {
                 ))
               ) : (
                 <>
-                  <Item title="Log In" component="" />
+                  <Item
+                    title="Log In"
+                    onClickListener={async () => {
+                      if (window.ethereum) {
+                        const test = await window.ethereum.request({
+                          method: "eth_requestAccounts",
+                        });
+                        console.log(test);
+                      } else {
+                        alert("MetaMask Not Found");
+                      }
+                    }}
+                  />
                   <Item title="Sign Up" component="signup" />
                 </>
               )}

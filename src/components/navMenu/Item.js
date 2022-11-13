@@ -28,7 +28,8 @@ const Item = ({ title, component, onClickListener }) => {
             <NavLink
               tag={Link}
               className={["text-dark", classes.title]}
-              to={{ pathname: onClickListener != null ? "/home" : component }}
+              to={{ pathname: onClickListener != null ? "" : component }}
+              onClick={onClickListener}
             >
               {title}
             </NavLink>
