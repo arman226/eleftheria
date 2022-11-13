@@ -28,6 +28,7 @@ const postDatas = [
     post_owner: "Nick",
     wallet_address: "1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX",
     post_title: "Confucius daily meme heehee",
+    balance: 10000,
   },
 ];
 

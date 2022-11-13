@@ -9,7 +9,7 @@ import Profile from "pages/Profile";
 import Dashboard from "pages/Dashboard";
 
 const RootRoute = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   return (
     <>
       <Router>
