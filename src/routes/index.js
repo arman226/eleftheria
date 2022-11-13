@@ -6,10 +6,10 @@ import NavMenu from "components/navMenu";
 import Layout from "components/Layout";
 import Signup from "pages/Sign-up";
 import Profile from "pages/Profile";
-import Dashboard from "pages/Dashboad";
+import Dashboard from "pages/Dashboard";
 
 const RootRoute = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   return (
     <>
       <Router>
